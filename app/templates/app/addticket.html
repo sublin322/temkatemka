@@ -1,0 +1,21 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+<h2>{{ title }}</h2>
+        <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+            <div>
+                {% for post in posts %}
+                    <h3>Наименование: {{ post.title }}</h3>
+                    <h3>Описание: {{ post.description }}</h3>
+                {% endfor %}
+                <br/>
+                {{ actsform.as_p }}
+                <button type="submit" class="save btn btn-default">Купить</button>
+                <a href="{% url 'games' %}" class="save btn btn-default">Отмена</a>
+            </div>
+        </form>
+</div>
+
+{% endblock %}

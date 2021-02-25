@@ -1,0 +1,48 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+{% load static %}
+
+<div class="jumbotron">
+    <h2><strong>Корзина:</strong></h2>
+    <div class="row">
+        {% for post in posts %}
+            {% if not post.ready %}
+                <div class="col-md-4">
+                    <div class="card-body">
+                        {% for post_1 in posts_all %}
+                            {% if post_1.id == post.post_id %}
+                                <img class="card-img-top" src="{{post_1.image.url }}" alt="Изображение" width="333.3333333333333" />
+                                <h3><strong>{{post_1.title}}</strong></h3>
+                            {% endif %}
+                        {% endfor %}
+                        <h5>Дата добавления: {{ post.date }}</h5>
+                        <a href="{% url 'buyticket' bid=post.id %}" class="save btn btn-default">Оплатить</a>
+                        <a href="{% url 'delticket' did=post.id %}" class="save btn btn-default">Удалить</a>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+        <hr />
+    <h2><strong>Купленные игры:</strong></h2>
+    <div class="row">
+        {% for post in posts %}
+            {% if post.ready %}
+                <div class="col-md-4">
+                    <div class="card-body">
+                        {% for post_1 in posts_all %}
+                            {% if post_1.id == post.post_id %}
+                                <img class="card-img-top" src="{{post_1.image.url }}" alt="Изображение" width="333.3333333333333" />
+                                <h3><strong>{{post_1.title}}</strong></h3>
+                                <h4><strong>Дата премьеры: {{ post_1.posted }}</strong></h4>
+                            {% endif %}
+                        {% endfor %}
+                        <h5>Дата покупки: {{ post.date }}</h5>  
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

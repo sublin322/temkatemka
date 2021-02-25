@@ -1,0 +1,18 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+
+<div class="jumbotron">
+    <p>
+        <h1>"The Witcher 3: Wild Hunt. Русский трейлер"</h1>
+        <h3>Когда в Северных королевствах бушует война, вы заключаете величайший контракт своей жизни — отыскать Дитя предназначения, живое оружие, которое может изменить облик мира</h3>
+        <video src="/media/video.mp4" {# Путь к Видео 1 #}
+                controls="controls"
+                width="100%"
+                poster="/media/fon.webp"> {# Фон для Видео 1 #}
+        </video>
+    </p>
+</div>
+
+{% endblock %}

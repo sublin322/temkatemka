@@ -1,0 +1,15 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% load static %}
+
+<div class="jumbotron">
+    <h2>{{ title }}:</h2>
+
+        <strong>Наши социальные сети:</strong><br />
+        <h4> &nbsp; Вконтакте: &nbsp; &nbsp; &nbsp; Steam:</h4>
+        <a href="https://vk.com/artem1201"><img src="{% static 'app/content/vk.png' %}" width="100px" alt="Вконтакте" /></a>&nbsp;
+        &nbsp;<a href="https://vk.com/artem1201"><img src="{% static 'app/content/steam.png' %}" width="100px" alt="Steam" /></a>
+</div>
+
+{% endblock %}

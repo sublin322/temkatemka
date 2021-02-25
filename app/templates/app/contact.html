@@ -1,0 +1,18 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% load static %}
+
+<div class="jumbotron">
+    <h2>{{ title }}:</h2>
+    <address>
+        <p><strong>&nbsp;Помощь:</strong><br />
+        <a href="https://vk.com/artem1201"><img src="{% static 'app/content/support.png' %}" width="100px" alt="Помощь" /></a>
+    </address>
+
+    <address>
+        <strong>Владелец сайта:</strong>   <a href="https://vk.com/artem1201">Саблин Артем</a><br />
+    </address>
+</div>
+
+{% endblock %}
